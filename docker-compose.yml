@@ -1,0 +1,31 @@
+##  ████████▄   ███    █▄     ▄████████ ███▄▄▄▄       ███        ▄████████     ███        ▄████████  ▄████████    ▄█   ▄█▄ 
+##  ███    ███  ███    ███   ███    ███ ███▀▀▀██▄ ▀█████████▄   ███    ███ ▀█████████▄   ███    ███ ███    ███   ███ ▄███▀ 
+##  ███    ███  ███    ███   ███    ███ ███   ███    ▀███▀▀██   ███    █▀     ▀███▀▀██   ███    ███ ███    █▀    ███▐██▀   
+##  ███    ███  ███    ███   ███    ███ ███   ███     ███   ▀   ███            ███   ▀   ███    ███ ███         ▄█████▀    
+##  ███    ███  ███    ███ ▀███████████ ███   ███     ███     ▀███████████     ███     ▀███████████ ███        ▀▀█████▄    
+##  ███    ███  ███    ███   ███    ███ ███   ███     ███              ███     ███       ███    ███ ███    █▄    ███▐██▄   
+##  ███  ▀ ███  ███    ███   ███    ███ ███   ███     ███        ▄█    ███     ███       ███    ███ ███    ███   ███ ▀███▄ 
+##  ▀██████▀▄█ ████████▀    ███    █▀   ▀█   █▀     ▄████▀    ▄████████▀     ▄████▀     ███    █▀  ████████▀    ███   ▀█▀ 
+##                                                                                                             ▀         
+
+### QUANTARMY STACK 3.1
+### 2024 - JCX@QUANTARMY.COM
+### QUANTARMY.COM - PYTHONPARATRADING.COM
+#################################
+
+# Dockerfile.
+# - Dede miniconda 3 actualiza e instala git.
+# - Mueve configuraciones, crea directorios e instala via conda y pip
+
+version: '3'
+services:
+  notebook:
+    build:
+      context: ./DockerSource
+    image: qa_devel_research:beta
+    ports:
+      - "8888:8888"
+    environment:
+      JUPYTER_TOKEN: "testing"
+    volumes:
+      - ./quantarmy_repo:/WorkingData

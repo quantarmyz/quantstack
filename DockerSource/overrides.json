@@ -1,0 +1,45 @@
+{
+  "@jupyterlab/console-extension:tracker": {
+    "autoClosingBrackets": true
+  },
+  "@jupyterlab/notebook-extension:tracker": {
+    "codeCellConfig": {
+      "autoClosingBrackets": true,
+      "showTrailingSpace": true,
+      "recordTiming": true
+    },
+    "markdownCellConfig": {
+      "autoClosingBrackets": true,
+      "showTrailingSpace": true
+    },
+    "rawCellConfig": {
+      "autoClosingBrackets": true,
+      "showTrailingSpace": true
+    }
+  },
+  "@jupyterlab/fileeditor-extension:plugin": {
+    "autoClosingBrackets": true
+  },
+  "@jupyterlab/apputils-extension:notification": {
+    "fetchNews": true
+  },
+  "@jupyterlab/filebrowser-extension:browser": {
+    "showHiddenFiles": true
+  },
+  "@jupyterlab/extensionmanager-extension:plugin" : {
+    "disclaimed": true
+  },
+  "@jupyterlab/apputils-extension:themes": {
+    "theme": "Material Darker",
+    "theme-scrollbars": true
+  },
+  "@deathbeds/jupyterlab-fonts:fonts": {
+    "styles": {
+      ":root": {
+        "--jp-code-font-family": "'Fira Code Regular'",
+        "--jp-code-font-size": "18px",
+        "--jp-content-font-family": "'Anonymous Pro Regular'"
+      }
+    }
+  }
+}
