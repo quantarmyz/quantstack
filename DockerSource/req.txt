@@ -19,3 +19,4 @@ alphalens-reloaded
 empyrical-reloaded
 exchange_calendars
 python-dotenv
+logbook
