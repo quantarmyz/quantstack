@@ -14,8 +14,8 @@
 #################################
 
 # Dockerfile.
-# - Dede miniconda 3 actualiza e instala git.
-# - Mueve configuraciones, crea directorios e instala via conda y pip
+# - Lanza el notebook en un servicio localhost:8888
+# - Testing pasword : testing
 
 version: '3'
 services:

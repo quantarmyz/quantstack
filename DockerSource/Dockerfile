@@ -14,9 +14,7 @@
 #################################
 
 # Dockerfile.
-# - Dede miniconda 3 actualiza e instala git.
-# - Mueve configuraciones, crea directorios e instala via conda y pip
-
+# - Como se construye la imagen.
 ########################################################################################
 
 FROM continuumio/miniconda3:23.3.1-0

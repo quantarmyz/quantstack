@@ -1,10 +1,22 @@
+##  ████████▄   ███    █▄     ▄████████ ███▄▄▄▄       ███        ▄████████     ███        ▄████████  ▄████████    ▄█   ▄█▄ 
+##  ███    ███  ███    ███   ███    ███ ███▀▀▀██▄ ▀█████████▄   ███    ███ ▀█████████▄   ███    ███ ███    ███   ███ ▄███▀ 
+##  ███    ███  ███    ███   ███    ███ ███   ███    ▀███▀▀██   ███    █▀     ▀███▀▀██   ███    ███ ███    █▀    ███▐██▀   
+##  ███    ███  ███    ███   ███    ███ ███   ███     ███   ▀   ███            ███   ▀   ███    ███ ███         ▄█████▀    
+##  ███    ███  ███    ███ ▀███████████ ███   ███     ███     ▀███████████     ███     ▀███████████ ███        ▀▀█████▄    
+##  ███    ███  ███    ███   ███    ███ ███   ███     ███              ███     ███       ███    ███ ███    █▄    ███▐██▄   
+##  ███  ▀ ███  ███    ███   ███    ███ ███   ███     ███        ▄█    ███     ███       ███    ███ ███    ███   ███ ▀███▄ 
+##  ▀██████▀▄█ ████████▀    ███    █▀   ▀█   █▀     ▄████▀    ▄████████▀     ▄████▀     ███    █▀  ████████▀    ███   ▀█▀ 
+##                                                                                                             ▀         
 
-####################
-#
-# QUANTARMY CARNIVORE HACK FOR ZIPLINE
-# BY JCX@QUANTARMY
-# 2023 - ALL RIGTHS RESERVED.
-###################
+### QUANTARMY STACK 3.1
+### 2024 - JCX@QUANTARMY.COM
+### QUANTARMY.COM - PYTHONPARATRADING.COM
+#################################
+
+# qa_datalake.
+# - Conecta al Datalake, Descarga tickers y los carga para zipline.
+# Estructura para alimentar zipline con datos de arcticdb. Segregando dividendos, splits precios etc..
+#################################
 
 import pandas as pd
 from os import listdir, getenv
