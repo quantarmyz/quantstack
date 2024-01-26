@@ -1,5 +1,6 @@
 ### Guía para Iniciar QASTACK en Trading Algorítmico con Zipline en Docker (2024)
 
+QUANTARMY QUANTSTACK - QUANTARMY.COM | PYTHONPARATRADING.COM
 #### Pasos para Principiantes:
 
 1. **Clonar el Repositorio:**
