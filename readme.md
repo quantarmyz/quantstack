@@ -4,10 +4,9 @@
 
 1. **Clonar el Repositorio:**
    - Descarga la versión más reciente del código desde el repositorio.
--     ```
-    git clone https://github.com/quantarmyz/quantstack.git
      ```
-
+         git clone https://github.com/quantarmyz/quantstack.git
+     ```
 
 2. **Crear Archivo .env en DockerSource:**
    - Crea un archivo `.env` dentro de la carpeta `DockerSource`.
@@ -60,5 +59,3 @@
 
 8. **Realizar Backtest:**
    - Después de completar el proceso de ingest, dirígete a la carpeta de backtests y realiza una prueba para asegurarte de que todo funcione correctamente.
-
--------
