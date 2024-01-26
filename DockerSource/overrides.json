@@ -36,8 +36,8 @@
   "@deathbeds/jupyterlab-fonts:fonts": {
     "styles": {
       ":root": {
-        "--jp-code-font-family": "'Fira Code Regular'",
-        "--jp-code-font-size": "18px",
+        "--jp-code-font-family": "Atkinson Hyperlegible Regular",
+        "--jp-code-font-size": "23px",
         "--jp-content-font-family": "'Anonymous Pro Regular'"
       }
     }

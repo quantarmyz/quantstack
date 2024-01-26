@@ -20,3 +20,4 @@ empyrical-reloaded
 exchange_calendars
 python-dotenv
 logbook
+pyarrow

@@ -23,7 +23,9 @@ from os import listdir, getenv
 from exchange_calendars import get_calendar
 from dotenv import load_dotenv
 from arcticdb import Arctic
+import warnings
 
+warnings.filterwarnings('ignore')
 dotenv_path = '/root/.env'
 load_dotenv(dotenv_path)
 
@@ -34,13 +36,7 @@ secret_key = getenv("SECRET_KEY")
 
 ac = Arctic(f's3s://{endpoint}:{db}?access={access_key}&secret={secret_key}')
 
-print('_ - _ - _ - ')
-print(f'USING CREDENTIALS:')
-print(f' ENDPOINT : {endpoint}')
-print(f' DB : {db}')
-print(f' ACCESS : {access_key}')
-print(f' KEY : {secret_key}')
-print('_ - _ - _ - ')
+
 def bse_data(environ,
                   asset_db_writer,
                   minute_bar_writer,
@@ -53,10 +49,7 @@ def bse_data(environ,
                   show_progress,
                   output_dir):
     
-    #symbols = ac.get_library('index.historical.composition')
-    #symbols = symbols.read('GSPC.INDX').data.index.tolist()
-    #symbols =  [valor + ".US" for valor in symbols]
-    symbols = ['NVDA.US','MSFT.US','META.US','AMZN.US','TSLA.US']
+    symbols = ['XLE.US','XLF.US','XLI.US','XLK.US','XLP.US','XLU.US','XLV.US','XLY.US','XLB.US','XLC.US','ITA.US']
     if not symbols:
         
         raise ValueError("No se han encontrado TICKERS en el QA DATALAKE")
@@ -82,7 +75,7 @@ def bse_data(environ,
     
 def process_stocks(symbols, sessions, metadata, divs_splits):
     my_cal = get_calendar('NYSE')
-    prices = ac.get_library('prices.stocks.us.stable')
+    prices = ac.get_library('prices.etfs.us.stable')
     for sid, symbol in enumerate(symbols):
         print('[QA DATALAKE CARNIVORE ] ||| Loading {}...'.format(symbol))
         df = prices.read(symbol).data
@@ -97,8 +90,8 @@ def process_stocks(symbols, sessions, metadata, divs_splits):
         ac_date = end_date + pd.Timedelta(days=1)
         metadata.loc[sid] = start_date, end_date, ac_date, symbol, 'QAX'
 
-        if ac.get_library('divs.stocks.us.stable').has_symbol(symbol):
-            data_divs = ac['divs.stocks.us.stable'].read(symbol).data
+        if ac.get_library('divs.etfs.us.stable').has_symbol(symbol):
+            data_divs = ac['divs.etfs.us.stable'].read(symbol).data
             data_divs = data_divs.reset_index()
             div = pd.DataFrame()
             div['ex_date'] = data_divs['date']
@@ -114,8 +107,8 @@ def process_stocks(symbols, sessions, metadata, divs_splits):
             divs_splits["divs"] = pd.concat([divs, div], axis=0)
             print('[QA DATALAKE CARNIVORE] DIVS INFO ADDED OVER',symbol)
     
-        if ac.get_library('splits.stocks.us.stable').has_symbol(symbol):
-            data_splits = ac['splits.stocks.us.stable'].read(symbol).data
+        if ac.get_library('splits.etfs.us.stable').has_symbol(symbol):
+            data_splits = ac['splits.etfs.us.stable'].read(symbol).data
             data_splits = data_splits.reset_index()
             split = pd.DataFrame()
             split['effective_date'] = data_splits['date']
